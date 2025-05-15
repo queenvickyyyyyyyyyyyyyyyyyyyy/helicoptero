@@ -1,17 +1,19 @@
+package Helicoptero;
+
 public class Helicoptero{
     private boolean ligado;
     private double altitude;
     private int capacidade;
     private int pessoas;
 
-    public Helicoptero(boolean ligado, double altitude, int capacidade, int pessoas){
+    public Helicoptero(int capacidade){
         this.ligado = false;
         this.altitude = 0;
-        this.capacidade = 4;
+        this.capacidade = capacidade;
         this.pessoas = 0;
     }
 
-    public Helicoptero() {
+    public Helicoptero(){
     }
 
     public boolean entrar(){
@@ -48,7 +50,7 @@ public class Helicoptero{
 
     public boolean aterrissar(){
         if(ligado && altitude > 0){
-            ligado = true;
+            altitude = 0;
             return true;
         }
         return false;
